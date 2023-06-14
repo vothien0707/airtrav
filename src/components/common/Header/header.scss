@@ -1,0 +1,117 @@
+@use '../../../sass/common/variables' as *;
+@use '../../../sass/common/mixins' as *;
+@use '../../../sass/common/functions' as *;
+
+.header {
+  @include flex(center, space-between);
+  padding: 3rem 6rem;
+
+  &-logo {
+    @include flex(center);
+    gap: 1.5rem;
+
+    &__img {
+      width: 4rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: lh(25, 20);
+    }
+  }
+
+  &-nav {
+    @include flex(center);
+    gap: 4rem;
+
+    &__item {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: lh(24, 16);
+    }
+  }
+
+  &-right {
+    @include flex(center);
+    gap: 1.5rem;
+
+    &-tools {
+      @include flex(center, space-between);
+      width: 12.1rem;
+      height: 2.4rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: lh(21, 14);
+      color: $txt-grey-color;
+
+      &::after {
+        content: '';
+        width: 0.1rem;
+        height: 100%;
+        background-color: #b1b5c3;
+      }
+    }
+
+    &__avatar {
+      width: 3.2rem;
+      height: 3.2rem;
+      object-fit: cover;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+
+  // Responsive
+
+  @include tablet {
+    padding: 2.5rem 5.5rem;
+
+    &-nav {
+      gap: 3rem;
+    }
+  }
+
+  @include mobile {
+    padding: 1.5rem 2.4rem;
+
+    &-logo {
+      gap: 0.6rem;
+
+      &__img {
+        width: 1.8rem;
+      }
+
+      &__title {
+        font-size: 1.2rem;
+        line-height: lh(15, 12);
+      }
+    }
+
+    &-nav {
+      display: none;
+    }
+
+    &-right {
+      gap: 1rem;
+
+      &-tools {
+        width: 9.2rem;
+        height: 1.8rem;
+        font-size: 1.2rem;
+        line-height: lh(18, 12);
+      }
+
+      &__avatar {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      &__toggle {
+        display: block;
+      }
+    }
+  }
+}
